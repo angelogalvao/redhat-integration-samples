@@ -7,8 +7,8 @@
   <artifactId>camel-mail-attachment-example</artifactId>
   <version>1.0.0</version>
 
-  <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel XML</name>
-  <description>Spring Boot example running a Camel route defined in XML</description>
+  <name>Camel Mail attachment example</name>
+  <description>Spring Boot example running a Camel route that reads email attachments</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
