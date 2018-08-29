@@ -16,7 +16,7 @@
     <camelContext id="camel-mail-attachment-camel-context" xmlns="http://camel.apache.org/schema/spring">
 
         <route id="read-email-route">
-            <from uri="imaps:imap.gmail.com?port=993&amp;username={{email.username}}&amp;password={{email.password}}"/>
+            <from uri="{{email.protocol}}:{{email.url}}?port={{email.port}}&amp;username={{email.username}}&amp;password={{email.password}}"/>
             <log message="Reading e-mail: ${header.From} - ${header.Subject}"/>
             <split>
                 <ref>splitAttachmentsExpression</ref>
