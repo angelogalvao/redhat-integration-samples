@@ -8,7 +8,7 @@ The command that I used to create the keystore:
 
 The password is: example
 
-I create a container in Fabric with the following configuration:
+I create a container in Fabric with the following configuration
 
 Profile id : redhat-support-camelrestssl
 Parents.   : feature-camel
