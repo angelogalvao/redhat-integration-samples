@@ -1,3 +1,13 @@
+# Create a simple database
+
+My example is using MS SQL:
+
+CREATE TABLE [dbo].[TEST](
+	[Id] [int] NOT NULL,
+	[VALUE1] [nvarchar](50) NOT NULL,
+	[VALUE2] [nvarchar](50) NOT NULL
+) 
+
 # Create a basic datasource
 
 install -s mvn:org.osgi/org.osgi.service.jdbc
