@@ -16,9 +16,9 @@ This example uses these Azure Service Bus resources:
 
 You should edit the 'src/main/resources/application.properties' file to point to your Azure Service Bus service. These're the properties:
 
-- *broker.url* : Azure Service Bus URL
-- *camel.component.amqp.username* : This value is the Police name which is configured in Shared access policies page. Usually this value is RootManageSharedAccessKey. 
-- *camel.component.amqp.password* : This value is the primary key which is configured in Shared access policies page.
+- **broker.url** : *Azure Service Bus URL*
+- **camel.component.amqp.username** : *This value is the Police name which is configured in Shared access policies page. Usually this value is RootManageSharedAccessKey.*
+- **camel.component.amqp.password** : *This value is the primary key which is configured in Shared access policies page.*
 
 ### Execute the example
 
