@@ -46,6 +46,8 @@ public class BlueprintBeanPropertiesOverrideFromFileRouteTest extends CamelBluep
         // we should then expect at least one message
         getMockEndpoint("mock:result").expectedMinimumMessageCount(1);
 
+        
+
         // assert expectations
         assertMockEndpointsSatisfied();
     }
