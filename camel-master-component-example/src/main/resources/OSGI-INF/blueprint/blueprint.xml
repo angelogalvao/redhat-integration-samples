@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+       xsi:schemaLocation="
+         http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+         http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd
+         http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd">
+
+  <cm:property-placeholder persistent-id="camel-master-component-example" update-strategy="reload">
+    <cm:default-properties>
+      <cm:property name="server-id" value="!!! Default value, not loading from server !!!" />
+    </cm:default-properties>
+  </cm:property-placeholder>
+
+  <bean id="cluster" class="org.apache.camel.component.zookeeper.cluster.ZooKeeperClusterService">
+    <property name="id" value="${server-id}"/>
+    <property name="basePath" value="/camel/cluster"/>
+    <property name="nodes" value="localhost:2181"/>
+  </bean>
+
+  <camelContext id="camel-master-component-example-context" xmlns="http://camel.apache.org/schema/blueprint">
+
+    <route id="hello-route">
+
+      <from uri="master:timer:foo?period=10000"/>
+
+      <log message="Hello from {{server-id}}!"/>
+
+      <to uri="mock:result"/>
+    </route>
+
+  </camelContext>
+
+</blueprint>
