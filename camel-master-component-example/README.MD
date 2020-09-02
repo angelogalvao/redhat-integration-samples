@@ -34,7 +34,7 @@ $ cd /path/to/fuse
 $ bin/fuse
 ```
 
-- Install the Persistent ID(PID) for the Zookeper server identified:
+- Install the Persistent ID(PID) for the server identifier:
 
 ```
 karaf@root()> config:edit camel-master-component-example
