@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:httpu="http://cxf.apache.org/transports/http-undertow/configuration"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://cxf.apache.org/transports/http-undertow/configuration http://cxf.apache.org/schemas/configuration/http-undertow.xsd">
+    
+    <httpu:engine-factory bus="cxf">
+        <httpu:engine port="8080">
+            <httpu:handlers>
+                <bean class="org.apache.cxf.transport.http_undertow.handlers.CxfDisallowedMethodsHandler">
+                    <constructor-arg>
+                        <array>
+                            <value>TRACE</value>
+                        </array>
+                    </constructor-arg>
+                </bean>
+            </httpu:handlers>
+        </httpu:engine>
+    </httpu:engine-factory>
+</beans>
