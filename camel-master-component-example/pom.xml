@@ -16,7 +16,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <curator.version>2.12.0</curator.version>
-    <zk.version>3.5.8</zk.version>
+    <zk.version>3.7.2</zk.version>
   </properties>
 
   <dependencyManagement>
